@@ -14,11 +14,13 @@ namespace Wine.Controllers
     {
         private readonly IHttpClientFactory _clientFactory;
         private readonly WineClient _wineClient;
+
         public HomeController(IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
             _wineClient = new WineClient(_clientFactory);
         }
+
         public IActionResult Index()
         {
             return View();

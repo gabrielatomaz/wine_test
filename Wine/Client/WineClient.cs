@@ -87,10 +87,4 @@ namespace Wine.Client
         public string Code { get; set; }
 
     }
-
-    public class ClientsShopHistory
-    {
-        public Client Client { get; set; }
-        public ShopHistory ShopHistory { get; set; }
-    }
 }

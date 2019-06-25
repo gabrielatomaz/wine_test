@@ -1,0 +1,42 @@
+﻿@model List<Wine.Client.Client>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <a class="btn btn-block btn-secondary" asp-area="" asp-controller="Home" asp-action="ListClientsOrderByTotalValue">
+        Listar clientes ordenados pelo maior valor total em compras
+    </a>
+    <a class="btn btn-block btn-secondary" asp-area="" asp-controller="Home" asp-action="ShowClientWithBiggestShopValue">
+        Mostrar cliente com maior compra única no ano de 2016
+    </a>
+
+    <a class="btn btn-block btn-secondary" asp-area="" asp-controller="Home" asp-action="ListFaithfulClients">
+        Listar clientes mais fiéis
+    </a>
+    <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#exampleModal">
+        Recomendar um vinho para um cliente
+    </button>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form asp-controller="Home" asp-action="RecommendWine" method="post">
+                <div class="modal-body">
+                    <h3>Por favor, insira o CPF do cliente.</h3>
+                    <input type="text" class="form-control" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite um CPF no formato: xxx.xxx.xxx.xx" name="document" />
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-secondary" value="Recomendar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model List<Wine.Client.Client>
+@{
+    ViewData["Title"] = "_PartialListFaithfulClients";
+    Layout = "_Layout";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Documento</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Total de compras</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Document</td>
+                <td>@client.Name</td>
+                <td>@client.ShopHistory.Count()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

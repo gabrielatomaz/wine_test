@@ -1,0 +1,23 @@
+﻿@model Wine.Client.Client
+@{
+    ViewData["Title"] = "_PartialShowClientWithBiggestShopValue";
+    Layout = "_Layout";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Documento</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Valor total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Document</td>
+            <td>@Model.Name</td>
+            <td>@Model.ShopHistory.Max(sH => sH.TotalValue)</td>
+        </tr>
+    </tbody>
+</table>
+
